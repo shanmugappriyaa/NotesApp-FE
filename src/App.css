@@ -1,0 +1,14 @@
+.header-icon {
+    width: 45px;
+    height: 45px;
+  }
+.edit-icon{
+    width: 25px;
+    height: 25px; 
+    color:blue;
+}
+.delte-icon{
+    width: 25px;
+    height: 25px; 
+    color:red;
+}
