@@ -11,7 +11,7 @@ import Layout from "./components/Layout";
 
 function App() {
   const base_url =
-  process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "";
+  process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "https://shan-notes-mgmt.onrender.com/";
 
   axios.defaults.baseURL = base_url;
   axios.defaults.withCredentials = true;
