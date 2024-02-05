@@ -10,7 +10,10 @@ import EditNote from "./EditNote";
 import Layout from "./components/Layout";
 
 function App() {
-  axios.defaults.baseURL = "http://localhost:8000/";
+  const base_url =
+  process.env.NODE_ENV === "development" ? "http://localhost:8000/" : "";
+
+  axios.defaults.baseURL = base_url;
   axios.defaults.withCredentials = true;
   return (
 
