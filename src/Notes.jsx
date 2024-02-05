@@ -19,7 +19,7 @@ function Notes() {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/notes/byUser");
+      const res = await axios.get("notes/byUser");
       console.log("res------------> ", res);
       setNotes(res?.data?.userNotes);
     } catch (error) {
