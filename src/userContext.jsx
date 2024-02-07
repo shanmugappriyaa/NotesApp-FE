@@ -12,7 +12,7 @@ export function UserContextProvider({ children }) {
     });
   }, []);
   return (
-    <UserContext.Provider value={{ userName, setUserName}}>
+    <UserContext.Provider value={{ userName, setUserName }}>
       {children}
     </UserContext.Provider>
   );

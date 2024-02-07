@@ -55,7 +55,7 @@ function Header() {
                 Login
               </button>
               <button
-                onClick={() => navigate("/registration")}
+                onClick={() => navigate("/register")}
                 className=" btn btn-primary"
               >
                 {" "}
