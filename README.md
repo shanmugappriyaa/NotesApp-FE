@@ -5,6 +5,7 @@ Notes App is a simple web application that allows users to create, read, update,
 **Read Notes:** Users can view their existing notes and read the content.
 **Update Notes:** Users can edit and update their existing notes.
 **Delete Notes:** Users can delete notes they no longer need.
+**Reminder Emails:** Users receive reminder emails to complete their notes.
 
 **Technologies Used**
 **Frontend:**
