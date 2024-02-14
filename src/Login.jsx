@@ -17,8 +17,10 @@ function Login() {
     setUserName(name);
     console.log("login/reg------------->", data);
 
-    if (data?.user) {
+    if (data?.token) {
       // setUserName(data.user.userName)
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("userData", JSON.stringify(data.user));
       navigate("/noteslist");
     } else {
       alert("login fail");

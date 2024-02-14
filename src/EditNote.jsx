@@ -7,6 +7,8 @@ import DateTimePicker from "react-datetime-picker";
 import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
+import AxiosService from "./utils/ApiService";
+
 
 function EditNote() {
   const { id } = useParams();
@@ -16,7 +18,7 @@ function EditNote() {
   const [value, setValue] = useState("");
   const getNote = async () => {
     try {
-      const editNote = await axios.get(`notes/${id}`);
+      const editNote = await AxiosService.get(`notes/${id}`);
       console.log("editNote-->", editNote);
       setTitle(editNote.data?.notes?.title);
       setNotes(editNote.data?.notes?.notes);
@@ -32,7 +34,7 @@ function EditNote() {
   const handleEdit = async(e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`notes/edit/${id}`, { title, notes });
+      const res = await AxiosService.put(`notes/edit/${id}`, { title, notes });
       console.log("res--->",res);
       if (res.status === 200) {
         toast.success(" Notes edited successfully");

@@ -16,10 +16,11 @@ function Registration() {
       email
     });
     console.log(data);
-    if (data?.id) {
+    if (data?.User?._id) {
+      toast.success("Registration success")
       navigate("/login");
     } else {
-      toast.success("registration Fail");
+      toast.error("registration Fail");
     }
   }
   return (

@@ -7,6 +7,7 @@ import { CiEdit } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
 import { useNavigate, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import AxiosService from "./utils/ApiService";
 function Notes() {
   let navigate = useNavigate();
 
@@ -19,7 +20,7 @@ function Notes() {
 
   const fetchNotes = async () => {
     try {
-      const res = await axios.get("notes/byUser");
+      const res = await AxiosService.get("notes/byUser");
       console.log("res------------> ", res);
       setNotes(res?.data?.userNotes);
     } catch (error) {
@@ -30,7 +31,7 @@ function Notes() {
   console.log("all notes", notes);
   const deleteNote = async (id, i) => {
     try {
-      const del = await axios.delete(`/notes/${id}`);
+      const del = await AxiosService.delete(`/notes/${id}`);
       if (del?.data?.message === "Success") {
         notes.splice(i, 1);
         setNotes([...notes]);
@@ -46,7 +47,7 @@ function Notes() {
       const res = await axios.put(`/notes/status/${noteid}`, { status: true });
       console.log("res--->", res);
       if (res.status === 200) {
-        toast.success(" Notes edited successfully");
+        toast.success(" Notes  successfully completed");
 notes[i].status =true;
 setNotes([...notes])
       }

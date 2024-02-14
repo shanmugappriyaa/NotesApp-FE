@@ -4,7 +4,7 @@ import "react-datetime-picker/dist/DateTimePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-clock/dist/Clock.css";
 import axios from "axios";
-
+import AxiosService from "./utils/ApiService";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,14 +14,14 @@ function CreateNote() {
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
   const [reminder, setReminder] = useState(new Date());
-
+  let userData = JSON.parse(sessionStorage.getItem("userData"));
   const handleSave = async (ev) => {
     ev.preventDefault();
     console.log(title, notes,reminder)
     // const reminderTime = moment.utc(reminder).local().format('YYYY-MM-DD HH:mm');
     
     try {
-      const res = await axios.post("/notes/create", { title, notes,reminder ,email:"pshanmu.priya93@gmail.com" });
+      const res = await AxiosService.post("/notes/create", { title, notes,reminder ,email:"pshanmu.priya93@gmail.com" });
       if (res.status === 201) {
         toast.success("Notes created Successfully");
         navigate("/noteslist");
