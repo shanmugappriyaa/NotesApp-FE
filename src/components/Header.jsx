@@ -21,7 +21,7 @@ function Header() {
       <ToastContainer position="top-right" autoClose={2000} />
       <nav class="navbar navbar-light bg-warning p-2">
         <div className="col-6 text-align-center p-2">
-          <h4 onClick={() => navigate("/bloglist")}>
+          <h4 onClick={() => navigate("/noteslist")}>
             {" "}
             <MdOutlineSpeakerNotes /> Notes App
           </h4>
