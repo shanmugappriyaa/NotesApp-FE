@@ -6,7 +6,7 @@ function Layout() {
   return (
     <>
       <Header />
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center min-h">
         <div className="col-7 ">
           <Outlet />
         </div>

@@ -1,14 +1,33 @@
-.header-icon {
-    width: 45px;
-    height: 45px;
-  }
-.edit-icon{
-    width: 25px;
-    height: 25px; 
-    color:blue;
+.min-h {
+  min-height: 88vh !important;
 }
-.delte-icon{
-    width: 25px;
-    height: 25px; 
-    color:red;
+
+.link-decor {
+  text-decoration: none;
+  color: black;
+}
+
+.heading-txt {
+  font-size: xx-large;
+  font-weight: 500;
+}
+
+.back-arrow-icon {
+  width: 20px;
+  height: 20px !important;
+}
+
+.header-icon {
+  width: 45px;
+  height: 45px;
+}
+.edit-icon {
+  width: 25px;
+  height: 25px;
+  color: blue;
+}
+.delte-icon {
+  width: 25px;
+  height: 25px;
+  color: red;
 }

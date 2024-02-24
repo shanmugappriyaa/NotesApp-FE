@@ -47,7 +47,7 @@ function Header() {
             </div>
           ) : (
             <div className="d-flex me-5  align-items-center">
-              <button
+              {/* <button
                 onClick={() => navigate("/login")}
                 className="me-5 btn btn-primary"
               >
@@ -60,7 +60,7 @@ function Header() {
               >
                 {" "}
                 Registration
-              </button>
+              </button> */}
             </div>
           )}
         </div>

@@ -25,54 +25,63 @@ function Registration() {
         toast.error("registration Fail");
       }
     } catch (error) {
-      toast.error(error?.response?.data?.message)
+      toast.error(error?.response?.data?.message);
     }
   }
   return (
     <>
       <ToastContainer position="top-right" />
-      <div className="d-flex flex-column align-items-center p-2 m-4">
-        <div className=" ">
-          <h4> Registration </h4>
-        </div>
+      <div className="d-flex flex-column align-items-center justify-content-center min-h">
+        <div className="col-6 card shadow">
+          <div className="card-body d-flex flex-column align-items-center m-2">
+            <h4> Registration </h4>
 
-        <div className="col-8 justify-content-center">
-          <form>
-            <label class="form-label">UserName</label>
-            <input
-              type="text"
-              id="form3Example1"
-              className="form-control"
-              value={username}
-              onChange={(e) => setUserName(e.target.value)}
-            />
+            <form className="form d-flex flex-column m-3">
+              <label class="form-label">UserName</label>
+              <input
+                type="text"
+                id="form3Example1"
+                className="form-control"
+                value={username}
+                onChange={(e) => setUserName(e.target.value)}
+              />
 
-            <label class="form-label">Email</label>
-            <input
-              type="text"
-              id="form3Example1"
-              className="form-control"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label className="form-label">Password</label>
+              <label class="form-label mt-2">Email</label>
+              <input
+                type="text"
+                id="form3Example1"
+                className="form-control"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label className="form-label mt-2">Password</label>
 
-            <input
-              type="password"
-              id="form3Example4"
-              className="form-control"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              <input
+                type="password"
+                id="form3Example4"
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-            <button
-              type="button"
-              className="btn btn-primary  m-4"
-              onClick={handleReg}
-            >
-              Sign up
-            </button>
-          </form>
+              <button
+                type="button"
+                className="col-12 btn btn-danger mt-3"
+                onClick={handleReg}
+              >
+                Sign up
+              </button>
+            </form>
+            <div className="d-flex align-items-center ">
+              You have an Account?
+              <button
+                className="btn btn-link"
+                onClick={() => navigate("/login")}
+              >
+                Login Here
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>
