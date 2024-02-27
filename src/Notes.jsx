@@ -41,15 +41,14 @@ function Notes() {
     }
   };
 
-  const completeStatus = async (noteid,i) => {
+  const completeStatus = async (noteid, i) => {
     try {
-
-      const res = await axios.put(`/notes/status/${noteid}`, { status: true });
+      const res = await AxiosService.put(`/notes/status/${noteid}`, { status: true });
       console.log("res--->", res);
       if (res.status === 200) {
         toast.success(" Notes  successfully completed");
-notes[i].status =true;
-setNotes([...notes])
+        notes[i].status = true;
+        setNotes([...notes]);
       }
     } catch (error) {
       console.log(error);
@@ -57,7 +56,7 @@ setNotes([...notes])
   };
   return (
     <>
-         <ToastContainer position="top-right" autoClose={2000} />
+      <ToastContainer position="top-right" autoClose={2000} />
       <div className="m-4 d-flex flex-column ">
         {notes &&
           notes.map((note, index) => (
@@ -83,7 +82,7 @@ setNotes([...notes])
                   ) : (
                     <button
                       className="btn btn-outline-success"
-                      onClick={() => completeStatus(note._id,index)}
+                      onClick={() => completeStatus(note._id, index)}
                     >
                       Complete
                     </button>
